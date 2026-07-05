@@ -1164,7 +1164,8 @@ function setupDrag(){
   );
 }
 function dragStart(x,card){if(card.style.zIndex<3)return;isDragging=true;startX=x;currentCard=card;currentCard.style.transition='none';}
-function dragMove(x){if(!isDragging||!currentCard)return;const d=x-startX;currentCard.style.transform=`translateX(${d}px) rotate(${d*.08}deg)`;}
+function dragMove(x){if(!isDragging||!currentCard)return;const d=x-startX;currentCard.style.transform=
+`translate3d(${d}px,0,0) rotate(${d*.08}deg)`;
 function dragEnd(){
   if(!isDragging||!currentCard)return;isDragging=false;
   const m=currentCard.style.transform.match(/translateX\((-?\d+\.?\d*)px\)/);
@@ -1175,7 +1176,7 @@ function dragEnd(){
 function swipeCard(dir){
   if(!currentCard)return;
   currentCard.style.transition='transform 0.4s ease, opacity 0.4s ease';
-  currentCard.style.transform=dir==='left'?'translateX(-150%) rotate(-20deg)':'translateX(150%) rotate(20deg)';
+  currentCard.style.transform=dir==='left'?'translate3d(-150%,0,0) rotate(-20deg)':'translate3d(150%,0,0) rotate(20deg)';
   currentCard.style.opacity='0';currentCard.style.pointerEvents='none';
   setTimeout(() => {
 
@@ -1188,7 +1189,7 @@ function swipeCard(dir){
     currentCard.style.transform =
       "scale(0.90) translateY(20px)";
     currentCard.style.filter =
-      "brightness(0.5)";
+      "brightness(.7)";
 
     const cards =
     stack.querySelectorAll('.photo-card');
@@ -1199,21 +1200,21 @@ function swipeCard(dir){
 
         if(i===0){
             c.style.transform="";
-            c.style.filter="";
+            c.style.filter="1";
             c.style.pointerEvents="all";
         }
         else if(i===1){
             c.style.transform=
             "scale(0.95) translateY(10px)";
             c.style.filter=
-            "brightness(0.7)";
+            "brightness(0.85)";
             c.style.pointerEvents="none";
         }
         else{
             c.style.transform=
             "scale(0.90) translateY(20px)";
             c.style.filter=
-            "brightness(0.5)";
+            "brightness(0.7)";
             c.style.pointerEvents="none";
         }
     });
