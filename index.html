@@ -488,10 +488,7 @@ transform .25s ease;
   .card-stack{
   touch-action:none;
 }
-  .photo-card { position:absolute;will-change: transform;
-transform: translateZ(0);
-backface-visibility:hidden;
--webkit-backface-visibility:hidden;top:0;left:0;width:100%;height:100%;border-radius:20px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.6);border:1px solid rgba(232,135,154,.2);cursor:grab;transition:transform .25s cubic-bezier(.22,.61,.36,1);,box-shadow .15s ease;user-select:none;touch-action:none; }
+  .photo-card { position:absolute;top:0;left:0;width:100%;height:100%;border-radius:20px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.6);border:1px solid rgba(232,135,154,.2);cursor:grab;transition:transform .15s ease,box-shadow .15s ease;user-select:none;touch-action:none; }
   .photo-card{
    touch-action:none;
    user-select:none;
@@ -499,9 +496,9 @@ backface-visibility:hidden;
 }
   .photo-card:active { cursor:grabbing; }
   .photo-card img { width:100%;height:100%;object-fit:cover;pointer-events:none; }
-  .photo-card:nth-child(1){z-index:3} .photo-card:nth-child(2){z-index:2;transform:scale(.95) translateY(10px);filter:brightness(.85)} .photo-card:nth-child(3){z-index:1;transform:scale(.90) translateY(20px);filter:brightness(.7)} .photo-card:nth-child(4){
+  .photo-card:nth-child(1){z-index:3} .photo-card:nth-child(2){z-index:2;transform:scale(.95) translateY(10px);filter:brightness(.7)} .photo-card:nth-child(3){z-index:1;transform:scale(.90) translateY(20px);filter:brightness(.5)} .photo-card:nth-child(4){
     z-index:0;
-    transform:scale(.55) translateY(30px);
+    transform:scale(.85) translateY(30px);
     filter:brightness(.4);
 }
   @keyframes fly-left { to{transform:translateX(-150%) rotate(-20deg);opacity:0} }
@@ -533,7 +530,7 @@ backface-visibility:hidden;
     position:absolute;
     inset:0;
 
-    background: url("Images/photo12.jpg.jpeg") center center/cover no-repeat;
+    background: url("photo12.jpg.jpeg") center center/cover no-repeat;
 
 opacity: 0.28;
 
@@ -852,7 +849,7 @@ transform: scale(1.08);
 <div class="screen" id="screen2">
   <div class="char-container">
     <div class="char-glow">
-    <img src="Images/hello-kitty.gif" alt="Hello Kitty" id="kitty-loading">
+    <img src="hello-kitty.gif" alt="Hello Kitty" id="kitty-loading">
 </div>
     <div class="loading-text">LOADING SOMETHING SPECIAL...</div>
     <div class="loading-bar-wrap"><div class="loading-bar-fill" id="loading-bar"></div></div>
@@ -866,7 +863,7 @@ transform: scale(1.08);
   <div class="s3-title">It's Your Special<br>Day 🌸</div>
   <div class="bear-wrap">
     <div class="bear-circle">
-     <img src="Images/kitty.gif" alt="Cute Cat" id="cute-cat">
+     <img src="kitty.gif" alt="Cute Cat" id="cute-cat">
 </div>
     <div class="hearts-float">
       <span class="h-float">💕</span><span class="h-float">❤️</span>
@@ -880,7 +877,7 @@ transform: scale(1.08);
 <!-- SCREEN 4 -->
 <div class="screen" id="screen4">
   <div class="s4-bear">
-     <img src="Images/milk.gif" alt="Cute Cat" id="screen4-cat">
+     <img src="milk.gif" alt="Cute Cat" id="screen4-cat">
 </div>
   <div class="s4-title">Happy Birthday<br>Santhoshi</div>
   <div class="s4-bow">🎀</div>
@@ -898,26 +895,16 @@ transform: scale(1.08);
   <div class="s5-title">A Few Beautiful Pictures Of You</div>
   <div class="swipe-hint">✦ Swipe for more ✦</div>
   <div class="card-stack" id="card-stack">
-    <div class="photo-card" id="card0"><img src="Images/photo6.jpg.jpeg"loading="lazy"
-decoding="async"> alt="Santhoshi"></div>
-    <div class="photo-card" id="card1"><img src="Images/photo4.jpg.jpeg"loading="lazy"
-decoding="async"> alt="Santhoshi"></div>
-    <div class="photo-card" id="card2"><img src="Images/photo2.jpg.jpeg"loading="lazy"
-decoding="async"> alt="Santhoshi"></div>
-    <div class="photo-card" id="card3"><img src="Images/photo3.jpg.jpeg"loading="lazy"
-decoding="async"> alt="Santhoshi"></div>
-    <div class="photo-card" id="card4"><img src="Images/photo7.jpg.jpeg"loading="lazy"
-decoding="async"> alt="Santhoshi"></div>
-    <div class="photo-card" id="card5"><img src="Images/photo1.jpg.jpeg"loading="lazy"
-decoding="async"> alt="Santhoshi"></div>
-    <div class="photo-card" id="card6"><img src="Images/photo5.jpg.jpeg"loading="lazy"
-decoding="async"> alt="Santhoshi"></div>
-    <div class="photo-card" id="card7"><img src="Images/photo8.jpg.jpeg"loading="lazy"
-decoding="async"> alt="Santhoshi"></div>
-    <div class="photo-card" id="card8"><img src="Images/photo9.jpg.jpeg"loading="lazy"
-decoding="async"> alt="Santhoshi"></div>
-    <div class="photo-card" id="card9"><img src="Images/photo10.jpg.jpeg"loading="lazy"
-decoding="async"> alt="Santhoshi"></div>
+    <div class="photo-card" id="card0"><img src="photo6.jpg.jpeg"> alt="Santhoshi"></div>
+    <div class="photo-card" id="card1"><img src="photo4.jpg.jpeg"> alt="Santhoshi"></div>
+    <div class="photo-card" id="card2"><img src="photo2.jpg.jpeg"> alt="Santhoshi"></div>
+    <div class="photo-card" id="card3"><img src="photo3.jpg.jpeg"> alt="Santhoshi"></div>
+    <div class="photo-card" id="card4"><img src="photo7.jpg.jpeg"> alt="Santhoshi"></div>
+    <div class="photo-card" id="card5"><img src="photo1.jpg.jpeg"> alt="Santhoshi"></div>
+    <div class="photo-card" id="card6"><img src="photo5.jpg.jpeg"> alt="Santhoshi"></div>
+    <div class="photo-card" id="card7"><img src="photo8.jpg.jpeg"> alt="Santhoshi"></div>
+    <div class="photo-card" id="card8"><img src="photo9.jpg.jpeg"> alt="Santhoshi"></div>
+    <div class="photo-card" id="card9"><img src="photo10.jpg.jpeg"> alt="Santhoshi"></div>
   </div>
   <div class="card-counter" id="card-counter">1 / 10</div>
   <button class="btn-main" onclick="goTo(6)">💌 MESSAGE</button>
@@ -956,10 +943,7 @@ const starsCanvas = document.getElementById('stars-canvas');
 const sCtx = starsCanvas.getContext('2d');
 let stars = [];
 function resizeStars() { starsCanvas.width=window.innerWidth; starsCanvas.height=window.innerHeight; }
-function initStars() { stars=[]; const STAR_COUNT =
-window.innerWidth<768 ? 60 : 120;
-
-for(let i=0;i<STAR_COUNT;i++) stars.push({x:Math.random()*starsCanvas.width,y:Math.random()*starsCanvas.height,r:Math.random()*1.5+0.3,alpha:Math.random(),speed:Math.random()*0.008+0.003,phase:Math.random()*Math.PI*2}); }
+function initStars() { stars=[]; for(let i=0;i<120;i++) stars.push({x:Math.random()*starsCanvas.width,y:Math.random()*starsCanvas.height,r:Math.random()*1.5+0.3,alpha:Math.random(),speed:Math.random()*0.008+0.003,phase:Math.random()*Math.PI*2}); }
 function drawStars(t) { sCtx.clearRect(0,0,starsCanvas.width,starsCanvas.height); stars.forEach(s=>{s.alpha=0.3+0.7*Math.abs(Math.sin(t*s.speed+s.phase));sCtx.beginPath();sCtx.arc(s.x,s.y,s.r,0,Math.PI*2);sCtx.fillStyle=`rgba(255,200,190,${s.alpha})`;sCtx.fill();}); requestAnimationFrame(drawStars); }
 resizeStars(); initStars(); requestAnimationFrame(drawStars);
 window.addEventListener('resize',()=>{resizeStars();initStars();});
@@ -973,9 +957,9 @@ resizeConf(); window.addEventListener('resize',resizeConf);
 function launchConfetti(){
   confCanvas.style.display='block'; confettiPieces=[];
   const colors=['#e8879a','#c0392b','#f7b7c5','#d4af6a','#ffffff','#ff6b8a','#ffcdd2','#ff4466','#ffd700','#ff88aa','#ffb3c6'];
-  for(let i=0;i<120;i++) confettiPieces.push({x:Math.random()*confCanvas.width,y:-20-Math.random()*150,w:Math.random()*18+8,h:Math.random()*12+5,color:colors[Math.floor(Math.random()*colors.length)],vx:(Math.random()-.5)*10,vy:Math.random()*7+3,angle:Math.random()*360,spin:(Math.random()-.5)*14,alpha:1});
-  for(let i=0;i<60;i++) confettiPieces.push({x:0,y:confCanvas.height*0.5+(Math.random()-.5)*150,w:Math.random()*20+8,h:Math.random()*14+5,color:colors[Math.floor(Math.random()*colors.length)],vx:Math.random()*24+10,vy:(Math.random()-.5)*22-5,angle:Math.random()*360,spin:(Math.random()-.5)*18,alpha:1});
-  for(let i=0;i<60;i++) confettiPieces.push({x:confCanvas.width,y:confCanvas.height*0.5+(Math.random()-.5)*150,w:Math.random()*20+8,h:Math.random()*14+5,color:colors[Math.floor(Math.random()*colors.length)],vx:-(Math.random()*24+10),vy:(Math.random()-.5)*22-5,angle:Math.random()*360,spin:(Math.random()-.5)*18,alpha:1});
+  for(let i=0;i<250;i++) confettiPieces.push({x:Math.random()*confCanvas.width,y:-20-Math.random()*150,w:Math.random()*18+8,h:Math.random()*12+5,color:colors[Math.floor(Math.random()*colors.length)],vx:(Math.random()-.5)*10,vy:Math.random()*7+3,angle:Math.random()*360,spin:(Math.random()-.5)*14,alpha:1});
+  for(let i=0;i<180;i++) confettiPieces.push({x:0,y:confCanvas.height*0.5+(Math.random()-.5)*150,w:Math.random()*20+8,h:Math.random()*14+5,color:colors[Math.floor(Math.random()*colors.length)],vx:Math.random()*24+10,vy:(Math.random()-.5)*22-5,angle:Math.random()*360,spin:(Math.random()-.5)*18,alpha:1});
+  for(let i=0;i<180;i++) confettiPieces.push({x:confCanvas.width,y:confCanvas.height*0.5+(Math.random()-.5)*150,w:Math.random()*20+8,h:Math.random()*14+5,color:colors[Math.floor(Math.random()*colors.length)],vx:-(Math.random()*24+10),vy:(Math.random()-.5)*22-5,angle:Math.random()*360,spin:(Math.random()-.5)*18,alpha:1});
   confettiRunning=true; animateConfetti();
 }
 function animateConfetti(){
@@ -1180,14 +1164,7 @@ function setupDrag(){
   );
 }
 function dragStart(x,card){if(card.style.zIndex<3)return;isDragging=true;startX=x;currentCard=card;currentCard.style.transition='none';}
-function dragMove(x){
-    if(!isDragging||!currentCard)return;
-
-    const d=x-startX;
-
-    currentCard.style.transform=
-    `translate3d(${d}px,0,0) rotate(${d*.08}deg)`;
-}
+function dragMove(x){if(!isDragging||!currentCard)return;const d=x-startX;currentCard.style.transform=`translateX(${d}px) rotate(${d*.08}deg)`;}
 function dragEnd(){
   if(!isDragging||!currentCard)return;isDragging=false;
   const m=currentCard.style.transform.match(/translateX\((-?\d+\.?\d*)px\)/);
@@ -1198,7 +1175,7 @@ function dragEnd(){
 function swipeCard(dir){
   if(!currentCard)return;
   currentCard.style.transition='transform 0.4s ease, opacity 0.4s ease';
-  currentCard.style.transform=dir==='left'?'translate3d(-150%,0,0) rotate(-20deg)':'translate3d(150%,0,0) rotate(20deg)';
+  currentCard.style.transform=dir==='left'?'translateX(-150%) rotate(-20deg)':'translateX(150%) rotate(20deg)';
   currentCard.style.opacity='0';currentCard.style.pointerEvents='none';
   setTimeout(() => {
 
@@ -1210,7 +1187,8 @@ function swipeCard(dir){
     currentCard.style.opacity = "1";
     currentCard.style.transform =
       "scale(0.90) translateY(20px)";
-    currentCard.style.opacity=".7";
+    currentCard.style.filter =
+      "brightness(0.5)";
 
     const cards =
     stack.querySelectorAll('.photo-card');
@@ -1221,21 +1199,21 @@ function swipeCard(dir){
 
         if(i===0){
             c.style.transform="";
-            c.style.opacity="1";
+            c.style.filter="";
             c.style.pointerEvents="all";
         }
         else if(i===1){
             c.style.transform=
             "scale(0.95) translateY(10px)";
             c.style.filter=
-            "brightness(0.85)";
+            "brightness(0.7)";
             c.style.pointerEvents="none";
         }
         else{
             c.style.transform=
             "scale(0.90) translateY(20px)";
             c.style.filter=
-            "brightness(0.7)";
+            "brightness(0.5)";
             c.style.pointerEvents="none";
         }
     });
@@ -1350,7 +1328,7 @@ function heartBurst(){
         },2000);
     }
 }
-setInterval(createPetal,1200);
+setInterval(createPetal,500);
 
 function heartClick(){
 
