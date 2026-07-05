@@ -895,16 +895,16 @@ transform: scale(1.08);
   <div class="s5-title">A Few Beautiful Pictures Of You</div>
   <div class="swipe-hint">✦ Swipe for more ✦</div>
   <div class="card-stack" id="card-stack">
-    <div class="photo-card" id="card0"><img src="photo6.jpg.jpeg"> alt="Santhoshi"></div>
-    <div class="photo-card" id="card1"><img src="photo4.jpg.jpeg"> alt="Santhoshi"></div>
-    <div class="photo-card" id="card2"><img src="photo2.jpg.jpeg"> alt="Santhoshi"></div>
-    <div class="photo-card" id="card3"><img src="photo3.jpg.jpeg"> alt="Santhoshi"></div>
-    <div class="photo-card" id="card4"><img src="photo7.jpg.jpeg"> alt="Santhoshi"></div>
-    <div class="photo-card" id="card5"><img src="photo1.jpg.jpeg"> alt="Santhoshi"></div>
-    <div class="photo-card" id="card6"><img src="photo5.jpg.jpeg"> alt="Santhoshi"></div>
-    <div class="photo-card" id="card7"><img src="photo8.jpg.jpeg"> alt="Santhoshi"></div>
-    <div class="photo-card" id="card8"><img src="photo9.jpg.jpeg"> alt="Santhoshi"></div>
-    <div class="photo-card" id="card9"><img src="photo10.jpg.jpeg"> alt="Santhoshi"></div>
+    <div class="photo-card" id="card0"><img src="photo6.jpg.jpeg" alt="Santhoshi" loading="eager" decoding="async"></div>
+    <div class="photo-card" id="card1"><img src="photo4.jpg.jpeg" alt="Santhoshi" loading="lazy" decoding="async"></div>
+    <div class="photo-card" id="card2"><img src="photo2.jpg.jpeg" alt="Santhoshi" loading="lazy" decoding="async"></div>
+    <div class="photo-card" id="card3"><img src="photo3.jpg.jpeg" alt="Santhoshi" loading="lazy" decoding="async"></div>
+    <div class="photo-card" id="card4"><img src="photo7.jpg.jpeg" alt="Santhoshi" loading="lazy" decoding="async"></div>
+    <div class="photo-card" id="card5"><img src="photo1.jpg.jpeg" alt="Santhoshi" loading="lazy" decoding="async"></div>
+    <div class="photo-card" id="card6"><img src="photo5.jpg.jpeg" alt="Santhoshi" loading="lazy" decoding="async"></div>
+    <div class="photo-card" id="card7"><img src="photo8.jpg.jpeg" alt="Santhoshi" loading="lazy" decoding="async"></div>
+    <div class="photo-card" id="card8"><img src="photo9.jpg.jpeg" alt="Santhoshi" loading="lazy" decoding="async"></div>
+    <div class="photo-card" id="card9"><img src="photo10.jpg.jpeg" alt="Santhoshi" loading="lazy" decoding="async"></div>
   </div>
   <div class="card-counter" id="card-counter">1 / 10</div>
   <button class="btn-main" onclick="goTo(6)">💌 MESSAGE</button>
@@ -1164,12 +1164,15 @@ function setupDrag(){
   );
 }
 function dragStart(x,card){if(card.style.zIndex<3)return;isDragging=true;startX=x;currentCard=card;currentCard.style.transition='none';}
-function dragMove(x){if(!isDragging||!currentCard)return;const d=x-startX;currentCard.style.transform=
-`translate3d(${d}px,0,0) rotate(${d*.08}deg)`;
+function dragMove(x){
+  if(!isDragging||!currentCard)return;
+  const d=x-startX;
+  currentCard.style.transform=`translate3d(${d}px,0,0) rotate(${d*.08}deg)`;
+  currentCard.dataset.dragX=d;
+}
 function dragEnd(){
   if(!isDragging||!currentCard)return;isDragging=false;
-  const m=currentCard.style.transform.match(/translateX\((-?\d+\.?\d*)px\)/);
-  const d=m?parseFloat(m[1]):0;
+  const d=parseFloat(currentCard.dataset.dragX)||0;
   if(Math.abs(d)>80)swipeCard(d>0?'right':'left');
   else{currentCard.style.transition='transform 0.4s ease';currentCard.style.transform='';currentCard=null;}
 }
@@ -1200,7 +1203,7 @@ function swipeCard(dir){
 
         if(i===0){
             c.style.transform="";
-            c.style.filter="1";
+            c.style.filter="";
             c.style.pointerEvents="all";
         }
         else if(i===1){
